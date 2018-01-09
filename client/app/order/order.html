@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-11">
+      <h3>ثبت سفارش</h3>
+    </div>
+    <div class="col-md-1">
+      <a class="btn btn-success btn-sm" ui-sref="user" style="float: left">
+        <i class="fa fa-arrow-left fa-lg"></i>&nbsp;
+        بازگشت
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form" name="form" ng-submit="vm.save(form)" novalidate>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="title">عنوان</label>
+              <input type="text" name="title" id="title" class="form-control" ng-model="vm.order.title" required/>
+              <p class="help-block" ng-show="form.title.$error">
+              </p>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="item">محصول</label>
+              <input type="text" name="item" id="item" class="form-control" ng-model="vm.order.item" required/>
+              <p class="help-block" ng-show="form.item.$error">
+              </p>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <label for="count">تعداد</label>
+              <input type="number" name="count" id="count" class="form-control" ng-model="vm.order.count" required/>
+              <p class="help-block" ng-show="form.count.$error">
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="description">توضیحات</label>
+              <textarea name="description" id="description" class="form-control" style="min-height: 200px"
+                        ng-model="vm.order.description"></textarea>
+              <p class="help-block" ng-show="form.description.$error">
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">تایید</button>
+        <button class="btn btn-lg btn-default" type="reset">پاک</button>
+      </form>
+    </div>
+  </div>
+</div>
