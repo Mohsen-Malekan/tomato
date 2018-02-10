@@ -1,7 +1,21 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h3>پیام ها</h3>
+    <div class="col-lg-12" ng-repeat="mess in vm.messages" style="margin: 5px auto">
+      <div class="media" ng-class="{'bg-success': !mess.hasRead}">
+        <div class="media-body" style="padding: 10px">
+          <h3 class="media-heading">
+            {{mess.name}}
+          </h3>
+          <span class="label label-info"><i class="fa fa-calendar"></i> {{mess.date | jalaali:'jYYYY/jMM/jDD'}}</span>
+          <span class="label label-primary"><i class="fa fa-mobile"></i> {{mess.mobile}}</span>
+          <span class="label label-success"><i class="fa fa-envelope"></i> {{mess.email}}</span>
+          <p style="margin-top: 15px">{{mess.message}}</p>
+          <div>
+            <button class="btn btn-success btn-sm" ng-if="!mess.hasRead" ng-click="vm.seen(mess)">مشاهده شد</button>
+            <button class="btn btn-danger btn-sm" ng-click="vm.delete(mess)">حذف</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

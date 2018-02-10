@@ -1,21 +1,41 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-md-11">
-      <h3>لیست سفارشات</h3>
+    <div class="col-md-9">
+      <h3>
+        سفارشات
+      </h3>
     </div>
-    <div class="col-md-1">
+    <div class="col-md-1" ng-if="!vm.Auth.hasRoleSync('admin')">
       <a class="btn btn-primary btn-sm" ui-sref="order" style="float: left">
         <i class="fa fa-plus-square-o fa-lg"></i>&nbsp;
         جدید
       </a>
     </div>
+    <div class="col-md-2" ng-if="vm.Auth.hasRoleSync('admin')">
+      <label>
+        <input type="checkbox" ng-model="vm.showNew">
+        سفارشات جدید
+      </label>
+    </div>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <table class="table table-responsive table-striped">
-        <thead></thead>
-        <tbody></tbody>
-      </table>
+    <div class="col-md-12" ng-repeat="order in vm.orders | filter:{hasRead: vm.showNew ? false : undefined}" style="margin: 5px auto">
+      <div class="media" ng-class="{'bg-success': !order.hasRead}">
+        <div class="media-body" style="padding: 10px">
+          <h4 class="media-heading">
+            {{order.title}}
+          </h4>
+          <h5>{{order.user.name}} - {{order.user.phone}} - {{order.user.email}}</h5>
+          <span class="label label-info"><i class="fa fa-calendar"></i> {{order.date | jalaali:'jYYYY/jMM/jDD'}}</span>
+          <span class="label label-primary"><i class="fa fa-archive"></i> {{order.item}}</span>
+          <span class="label label-success" title="مقدار"><i class="fa fa-shopping-bag"></i> {{order.count}}</span>
+          <p style="margin-top: 15px">{{order.description}}</p>
+          <div ng-if="vm.Auth.hasRoleSync('admin')">
+            <button class="btn btn-success btn-sm" ng-if="!order.hasRead" ng-click="vm.seen(order)">مشاهده شد</button>
+            <button class="btn btn-danger btn-sm" ng-click="vm.delete(order)">حذف</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

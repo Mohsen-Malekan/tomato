@@ -5,34 +5,39 @@ import angular from 'angular';
 
 export class NavbarComponent {
   menu = {
-    admin: [
+    admin : [
       {
-        title: 'کاربران',
-        state: 'admin',
-        icon: 'fa fa-users'
-      }
-    ],
-    user: [
-      {
-        title: 'سفارشات',
-        state: 'user',
-        icon: 'fa fa-bookmark'
+        title : 'کاربران',
+        state : 'admin',
+        icon  : 'fa fa-users'
       },
       {
-        title: 'پیام ها',
-        state: 'messages',
-        icon: 'fa fa-envelope'
+        title : 'پیام ها',
+        state : 'messages',
+        icon  : 'fa fa-comment'
+      },
+      {
+        title : 'سفارشات',
+        state : 'userAll',
+        icon  : 'fa fa-shopping-cart'
+      }
+    ],
+    user  : [
+      {
+        title : 'سفارشات',
+        state : 'user',
+        icon  : 'fa fa-bookmark'
       }
     ]
   };
 
   isCollapsed = true;
 
-  constructor(Auth) {
+  constructor (Auth) {
     'ngInject';
 
-    this.isLoggedIn = Auth.isLoggedInSync;
-    this.isAdmin = Auth.isAdminSync;
+    this.isLoggedIn     = Auth.isLoggedInSync;
+    this.isAdmin        = Auth.isAdminSync;
     this.getCurrentUser = Auth.getCurrentUserSync;
   }
 
@@ -40,7 +45,7 @@ export class NavbarComponent {
 
 export default angular.module('directives.navbar', [])
   .component('navbar', {
-    template: require('./navbar.html'),
-    controller: NavbarComponent
+    template   : require('./navbar.html'),
+    controller : NavbarComponent
   })
   .name;

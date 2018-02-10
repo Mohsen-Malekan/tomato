@@ -22,6 +22,7 @@ import admin from './admin';
 import user from './user/user.component';
 import order from './order/order.component';
 import messages from './messages/messages.component';
+import news from './news/news.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
@@ -32,7 +33,7 @@ import socket from '../components/socket/socket.service';
 import './app.css';
 
 angular.module('tomatoApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, user, order, messages, 'validation.match', navbar, footer, main, constants,
+  uiBootstrap, _Auth, account, admin, user, order, messages, news, 'validation.match', navbar, footer, main, constants,
   socket, util
 ])
   .config(routeConfig)

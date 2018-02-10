@@ -5,6 +5,7 @@ import angular from 'angular';
 export default class SignupController {
   user = {
     name: '',
+    phone: '',
     email: '',
     password: ''
   };
@@ -24,6 +25,7 @@ export default class SignupController {
     if(form.$valid) {
       return this.Auth.createUser({
         name: this.user.name,
+        phone: this.user.phone,
         email: this.user.email,
         password: this.user.password
       })

@@ -3,19 +3,22 @@ import uiRouter from 'angular-ui-router';
 import routing from './order.routes';
 
 export class OrderController {
-  order = {};
-
   /*@ngInject*/
-  constructor () {
+  constructor ($http, $state) {
+    this.$http = $http;
+    this.$state = $state;
   }
 
-  $onInit () {
-  }
+  $onInit () {}
 
   save (form) {
     if (form.$valid) {
-      console.log(this.order);
-      this.order = {};
+      if (this.order._id) {
+        return this.$http.put(`api/orders/${this.order._id}`, this.order)
+          .then(() => this.$state.go('user'));
+      }
+      return this.$http.post('api/orders', this.order)
+        .then(() => this.$state.go('user'));
     }
   }
 }
@@ -25,6 +28,9 @@ export default angular.module('tomatoApp.order', [uiRouter])
   .component('order', {
     template     : require('./order.html'),
     controller   : OrderController,
-    controllerAs : 'vm'
+    controllerAs : 'vm',
+    bindings     : {
+      order : '='
+    }
   })
   .name;

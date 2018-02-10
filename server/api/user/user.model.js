@@ -9,6 +9,10 @@ const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,
+  phone: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     lowercase: true,

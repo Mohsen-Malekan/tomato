@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <form name="form" ng-submit="vm.submit(form)" novalidate>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="date">تاریخ</label>
+              <input type="text" id="date" class="form-control" name="date" ng-model="vm.news.date" readonly>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="title">عنوان</label>
+              <input type="text" id="title" class="form-control" name="title" ng-model="vm.news.title">
+            </div>
+          </div>
+          <div class="col-md-12" ng-show="!vm.news._id">
+            <label>تصویر</label>
+            <div class="thumbnail">
+              <!--ngf-resize="{width: 400, height: 400}"-->
+              <img ng-show="vm.news.photo" class="img-thumbnail" ngf-thumbnail="vm.news.photo" alt="تصویر خبر">
+              <div class="caption">
+                <div class="btn btn-primary btn-sm" ngf-select ng-model="vm.news.photo"
+                     name="photo"
+                     ngf-pattern="'image/*'" ngf-accept="'image/jpg'"
+                     ngf-max-size="20MB">
+                  انتخاب
+                </div>
+                <button type="button" class="btn btn-danger btn-sm" ng-click="vm.news.photo = null">
+                  حذف
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="text">متن</label>
+          <textarea id="text" class="form-control" name="text" ng-model="vm.news.text" rows="9"></textarea>
+        </div>
+      </div>
+      <hr>
+      <div class="col-md-8">
+        <button type="submit" class="btn btn-primary">ذخیره</button>
+      </div>
+    </div>
+  </form>
+</div>
