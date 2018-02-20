@@ -5,10 +5,12 @@ import newsDetail from './news-detail/news-detail.component';
 import newsEdit from './news-edit/news-edit.component';
 
 export class NewsController {
-  /*@ngInject*/
-  // constructor () {}
 
-  // $onInit () {}
+  /*@ngInject*/
+  constructor (Auth) {
+    'ngInject'
+    this.Auth = Auth;
+  }
 }
 
 export default angular.module('tomatoApp.news', [uiRouter, newsDetail, newsEdit])
