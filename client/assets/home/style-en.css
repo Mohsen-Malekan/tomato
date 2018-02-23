@@ -35,13 +35,13 @@ body {
   color: #8b8e94;
   line-height: 24px;
   font-size: 15px;
-  font-family: wYekan, "Open Sans", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #000000;
   line-height: 1.5;
-  font-family: "Droid Arabic Kufi", "Open Sans", Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 h1 {
@@ -874,7 +874,6 @@ section[data-section="events"] {
   font-size: 12px;
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-family: Tahoma;
 }
 
 .probootstrap-block-image .text h3 {
@@ -1873,7 +1872,7 @@ section[data-section="events"] {
 }
 
 .probootstrap-heading .primary-heading {
-  font-family: "Droid Arabic Kufi", serif;
+  font-family: "Pinyon Script", serif;
   color: #FFA33E;
   margin: 0;
   padding: 0;
@@ -2346,8 +2345,4 @@ section[data-section="events"] {
 
 .about-us p {
   font-size: large;
-}
-
-.probootstrap-block-image .text {
-  direction: rtl;
 }

@@ -21,9 +21,9 @@ export default function (app) {
       res.sendFile(path.resolve(`${app.get('appPath')}/index.html`));
     });
 
-  app.route('/landing')
+  app.route('/en')
     .get((req, res) => {
-      res.sendFile(path.resolve(`${app.get('appPath')}/index.html`));
+      res.sendFile(path.resolve(`${app.get('appPath')}/index-en.html`));
     });
 
   // All undefined asset or api routes should return a 404

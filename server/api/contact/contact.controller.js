@@ -13,6 +13,7 @@
 import request from 'request-promise-native';
 import jsonpatch from 'fast-json-patch';
 import Contact from './contact.model';
+import config from '../../config/environment';
 
 function respondWithResult (res, statusCode) {
   statusCode = statusCode || 200;
@@ -85,7 +86,7 @@ export function show (req, res) {
 export function create (req, res) {
   let options = {
     method : 'POST',
-    uri    : `https://www.google.com/recaptcha/api/siteverify?secret=6LeUlvYSAAAAAPThZuny9zoBneT4Yuz3U_L1Wwod&response=${req.body.recaptchaResponse}`,
+    uri    : `https://www.google.com/recaptcha/api/siteverify?secret=${config.google.recaptchaSecret}&response=${req.body.recaptchaResponse}`,
     body   : {
       secret   : '6LeUlvYSAAAAAPThZuny9zoBneT4Yuz3U_L1Wwod',
       response : req.body.recaptchaResponse

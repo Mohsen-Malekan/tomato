@@ -1,16 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <div class="thumbnail">
-        <img ng-if="vm.news.url" ng-src="{{vm.news.url}}" alt="{{vm.news.title}}">
-        <img ng-if="!vm.news.url" ng-src="assets/images/img_square_{{vm.index}}.jpg" alt="{{vm.news.title}}">
+      <div class="thumbnail" style="direction: {{vm.lng === 'en' ? 'ltr' : 'rtl'}}">
+        <img ng-if="vm.news.url" ng-src="{{vm.news.url}}" alt="{{vm.news.title[vm.lng]}}">
+        <img ng-if="!vm.news.url" ng-src="assets/images/img_square_{{vm.index}}.jpg" alt="{{vm.news.title[vm.lng]}}">
         <div class="caption">
-          <h3>{{vm.news.title}}</h3>
-          <small class="text-muted" style="font-family: Tahoma">{{vm.news.date}}</small>
-          <p ng-repeat="line in vm.news.text track by $index">{{line}}</p>
-          <p>
+          <h3>{{vm.news.title[vm.lng]}}</h3>
+          <small class="text-muted" style="font-family: Tahoma" ng-show="vm.lng === 'fa'">{{vm.news.date}}</small>
+          <small class="text-muted" style="font-family: Tahoma" ng-show="vm.lng === 'en'">{{vm.news.date2}}</small>
+          <p ng-repeat="line in vm.news.text[vm.lng] track by $index">{{line}}</p>
+          <p ng-show="vm.lng === 'fa'">
             <a class="btn btn-warning btn-sm" role="button" ui-sref="news">بازگشت</a>
-            <a class="btn btn-primary btn-sm" ui-sref="newsEdit({id: vm.news._id})" ng-show="vm.Auth.hasRoleSync('admin')">ویرایش</a>
+            <a class="btn btn-primary btn-sm" ui-sref="newsEdit({lng: vm.lng, id: vm.news._id})" ng-show="vm.Auth.hasRoleSync('admin')">ویرایش</a>
+            <a class="btn btn-danger btn-sm" ng-click="vm.delete(vm.news)" role="button" ng-show="vm.Auth.hasRoleSync('admin')">حذف</a>
+          </p>
+          <p ng-show="vm.lng === 'en'">
+            <a class="btn btn-warning btn-sm" role="button" ui-sref="news({lng: vm.lng})">back</a>
+            <a class="btn btn-primary btn-sm" ui-sref="newsEdit({lng: vm.lng, id: vm.news._id})" ng-show="vm.Auth.hasRoleSync('admin')">ویرایش</a>
             <a class="btn btn-danger btn-sm" ng-click="vm.delete(vm.news)" role="button" ng-show="vm.Auth.hasRoleSync('admin')">حذف</a>
           </p>
         </div>

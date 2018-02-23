@@ -25,7 +25,7 @@ export class NewsEditController {
     if (form.$valid) {
       if (this.news._id) {
         return this.$http.put(`api/news/${this.news._id}`, this.news)
-          .then(() => this.$state.go('news'))
+          .then(() => this.$state.go('news', {lng: 'fa'}))
       }
       return this.Upload
         .upload({

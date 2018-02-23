@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/manage" class="navbar-brand">صنایع غذایی سید</a>
+            <a href="/" class="navbar-brand">صنایع غذایی سید</a>
         </div>
         <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav" ng-if="$ctrl.isAdmin() === true">
@@ -28,7 +28,7 @@
             </ul>
             <ul class="nav navbar-nav">
                 <li ui-sref-active="active">
-                    <a ui-sref="news">
+                    <a ui-sref="news({lng: 'fa'})">
                       <i class="fa fa-envelope"></i>
                       اخبار
                     </a>

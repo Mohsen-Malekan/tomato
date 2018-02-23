@@ -20,7 +20,8 @@ export default angular.module('tomatoApp.news', [uiRouter, newsDetail, newsEdit]
     controller   : NewsController,
     controllerAs : 'vm',
     bindings     : {
-      newsList : '='
+      newsList : '=',
+      lng      : '<'
     }
   })
   .name;

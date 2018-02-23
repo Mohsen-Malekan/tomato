@@ -48,7 +48,8 @@ var all = {
   google: {
     clientID: process.env.GOOGLE_ID || 'id',
     clientSecret: process.env.GOOGLE_SECRET || 'secret',
-    callbackURL: `${process.env.DOMAIN || ''}/auth/google/callback`
+    callbackURL: `${process.env.DOMAIN || ''}/auth/google/callback`,
+    recaptchaSecret: process.env.GOOGLE_RECAPTCHA_SECRET || '6LeUlvYSAAAAAPThZuny9zoBneT4Yuz3U_L1Wwod'
   }
 };
 

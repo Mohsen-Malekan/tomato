@@ -14,7 +14,7 @@ import jsonpatch from 'fast-json-patch';
 import path from 'path';
 import fs from 'fs';
 import News from './news.model';
-import _ from "lodash";
+import moment from 'moment';
 
 function respondWithResult (res, statusCode) {
   statusCode = statusCode || 200;
@@ -92,6 +92,7 @@ export function show (req, res) {
 
 // Creates a new News in the DB
 export function create (req, res) {
+  req.body.dateEN = moment().format('dddd DD MMMM YYYY');
   req.body.date2 = new Date();
   return News.create(req.body)
     .then(function (news) {

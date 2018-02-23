@@ -5,7 +5,7 @@ export default function routes ($stateProvider) {
 
   $stateProvider
     .state('news', {
-      url          : '/news',
+      url          : '/news/:lng',
       component    : 'news',
       authenticate : false,
       resolve      : {
@@ -13,6 +13,9 @@ export default function routes ($stateProvider) {
         newsList : function ($http) {
           return $http.get('api/news')
             .then(res => res.data);
+        },
+        lng: function ($transition$) {
+          return $transition$.params().lng.toLowerCase();
         }
       }
     });

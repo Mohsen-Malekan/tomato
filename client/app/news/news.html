@@ -5,15 +5,17 @@
       <h3 ng-show="vm.newsList.length == 0">خبری وجود ندارد</h3>
     </div>
     <div class="col-md-4" ng-repeat="news in vm.newsList">
-      <div class="thumbnail">
-        <img ng-if="news.url" ng-src="{{news.url}}" alt="{{news.title}}">
-        <img ng-if="!news.url" ng-src="assets/images/img_square_{{$index % 6}}.jpg" alt="{{news.title}}">
+      <div class="thumbnail" style="direction: {{vm.lng === 'en' ? 'ltr' : 'rtl'}}">
+        <img ng-if="news.url" ng-src="{{news.url}}" alt="{{news.title[vm.lng]}}">
+        <img ng-if="!news.url" ng-src="assets/images/img_square_{{$index % 6}}.jpg" alt="{{news.title[vm.lng]}}">
         <div class="caption">
-          <h3>{{news.title}}</h3>
-          <small class="text-muted" style="font-family: Tahoma">{{news.date}}</small>
-          <p>{{news.text | limitTo: 600}} <span ng-show="news.text.length > 600"> ...</span></p>
+          <h3>{{news.title[vm.lng]}}</h3>
+          <small class="text-muted" style="font-family: Tahoma" ng-show="vm.lng === 'fa'">{{news.date}}</small>
+          <small class="text-muted" style="font-family: Tahoma" ng-show="vm.lng === 'en'">{{news.dateEN}}</small>
+          <p>{{news.text[vm.lng] | limitTo: 600}} <span ng-show="news.text[vm.lng].length > 600"> ...</span></p>
           <p>
-            <a class="btn btn-warning btn-sm" role="button" ui-sref="newsDetail({id: news._id})">جزییات خبر ...</a>
+            <a class="btn btn-warning btn-sm" role="button" ui-sref="newsDetail({lng: vm.lng, id: news._id})" ng-show="vm.lng === 'fa'">جزییات خبر ...</a>
+            <a class="btn btn-warning btn-sm" role="button" ui-sref="newsDetail({lng: vm.lng, id: news._id})" ng-show="vm.lng === 'en'">Read more ...</a>
           </p>
         </div>
       </div>

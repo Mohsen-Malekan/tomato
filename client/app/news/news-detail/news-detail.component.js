@@ -12,12 +12,13 @@ export class NewsDetailController {
   }
 
   $onInit () {
-    this.news.text = this.news.text.split('\n');
+    this.news.text.fa = this.news.text.fa.split('\n');
+    this.news.text.en = this.news.text.en.split('\n');
   }
 
   delete (news) {
     this.$http.delete(`api/news/${news._id}`)
-      .then(() => this.$state.go('news'));
+      .then(() => this.$state.go('news', {lng : this.lng}));
   }
 }
 
@@ -28,7 +29,8 @@ export default angular.module('tomatoApp.news.detail', [uiRouter])
     controller   : NewsDetailController,
     controllerAs : 'vm',
     bindings     : {
-      news : '='
+      news : '=',
+      lng  : '<'
     }
   })
   .name;

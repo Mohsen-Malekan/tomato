@@ -11,8 +11,14 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label for="title">عنوان</label>
-              <input type="text" id="title" class="form-control" name="title" ng-model="vm.news.title">
+              <label for="title-fa">عنوان</label>
+              <input type="text" id="title-fa" class="form-control" name="title-en" ng-model="vm.news.title.fa" required>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="title-en">عنوان انگلیسی</label>
+              <input type="text" id="title-en" class="form-control" name="title-en" ng-model="vm.news.title.en" style="direction: ltr" required>
             </div>
           </div>
           <div class="col-md-12" ng-show="!vm.news._id">
@@ -37,8 +43,14 @@
       </div>
       <div class="col-md-8">
         <div class="form-group">
-          <label for="text">متن</label>
-          <textarea id="text" class="form-control" name="text" ng-model="vm.news.text" rows="9"></textarea>
+          <label for="text-fa">متن</label>
+          <textarea id="text-fa" class="form-control" name="text-fa" ng-model="vm.news.text.fa" rows="9" required></textarea>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label for="text-en">متن انگلیسی</label>
+          <textarea id="text-en" class="form-control" name="text-en" ng-model="vm.news.text.en" rows="9" required></textarea>
         </div>
       </div>
       <hr>
