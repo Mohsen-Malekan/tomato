@@ -687,7 +687,8 @@ a:hover, a:focus, a:active {
 
 section[data-section="menu"] {
   position: relative;
-  margin-top: -40px;
+  /*margin-top: -40px;*/
+  margin-top: -138px;
   z-index: -1;
 }
 
@@ -1882,7 +1883,7 @@ section[data-section="events"] {
 
 @media screen and (max-width: 768px) {
   .probootstrap-heading .primary-heading {
-    font-size: 70px;
+    font-size: 50px;
   }
 }
 
@@ -1891,10 +1892,10 @@ section[data-section="events"] {
   color: #ffffff;
   margin: 0;
   padding: 0;
-  letter-spacing: .05em;
-  font-size: 50px;
+  /*letter-spacing: .05em;*/
+  font-size: 80px;
   position: relative;
-  top: -50px;
+  top: 15px;
   font-weight: 700;
   line-height: 40px;
 }

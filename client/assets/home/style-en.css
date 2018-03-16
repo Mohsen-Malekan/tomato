@@ -687,7 +687,8 @@ a:hover, a:focus, a:active {
 
 section[data-section="menu"] {
   position: relative;
-  margin-top: -40px;
+  /*margin-top: -40px;*/
+  margin-top: -138px;
   z-index: -1;
 }
 
@@ -1881,7 +1882,7 @@ section[data-section="events"] {
 
 @media screen and (max-width: 768px) {
   .probootstrap-heading .primary-heading {
-    font-size: 70px;
+    font-size: 60px;
   }
 }
 
