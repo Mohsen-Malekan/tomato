@@ -12,9 +12,9 @@ export class NewsEditController {
 
   /*@ngInject*/
   constructor (Upload, $state, $http) {
+    this.$http = $http;
     this.Upload = Upload;
     this.$state = $state;
-    this.$http = $http;
   }
 
   $onInit () {

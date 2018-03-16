@@ -295,6 +295,68 @@
 </section>
 <section class="probootstrap-section" ng-controller="NewsController as vm" style="padding: 4em 0;">
   <div class="container">
+    <div class="row" ng-show="!vm.loaded">
+      <div class="col-md-4 col-sm-4 probootstrap-animate">
+        <div class="probootstrap-block-image">
+          <figure>
+            <img src="assets/images/img_square_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+          </figure>
+          <div class="text">
+            <span class="date">June 29, 2017</span>
+            <h3>
+              <a href="#">Laboriosam Quod Dignissimos</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam
+              soluta
+              at.
+            </p>
+            <p>
+              <a href="" ng-click="vm.openDialog()" class="probootstrap-custom-link link-sm">بیشتر بخوانید</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 probootstrap-animate">
+        <div class="probootstrap-block-image">
+          <figure>
+            <img src="assets/images/img_square_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+          </figure>
+          <div class="text">
+            <span class="date">June 29, 2017</span>
+            <h3>
+              <a href="#">Laboriosam Quod Dignissimos</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam
+              soluta
+              at.
+            </p>
+            <p class="">
+              <a href="#" class="probootstrap-custom-link link-sm">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 probootstrap-animate">
+        <div class="probootstrap-block-image">
+          <figure>
+            <img src="assets/images/img_square_4.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+          </figure>
+          <div class="text">
+            <span class="date">June 29, 2017</span>
+            <h3>
+              <a href="#">Laboriosam Quod Dignissimos</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam
+              soluta
+              at.
+            </p>
+            <p class="">
+              <a href="#" class="probootstrap-custom-link link-sm">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row" ng-show="vm.loaded">
       <div class="col-md-4 col-sm-4 probootstrap-animate" ng-repeat="n in vm.news"
            style="opacity: 1; visibility: visible">

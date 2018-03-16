@@ -687,8 +687,8 @@ a:hover, a:focus, a:active {
 
 section[data-section="menu"] {
   position: relative;
-  /*margin-top: -40px;*/
-  margin-top: -138px;
+  margin-top: -40px;
+  /*margin-top: -138px;*/
   z-index: -1;
 }
 

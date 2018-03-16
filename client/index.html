@@ -299,6 +299,68 @@
 </section>
 <section class="probootstrap-section" ng-controller="NewsController as vm" style="padding: 4em 0;">
   <div class="container">
+    <div class="row" ng-show="!vm.loaded">
+      <div class="col-md-4 col-sm-4 probootstrap-animate">
+        <div class="probootstrap-block-image">
+          <figure>
+            <img src="assets/images/img_square_2.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+          </figure>
+          <div class="text">
+            <span class="date">June 29, 2017</span>
+            <h3>
+              <a href="#">Laboriosam Quod Dignissimos</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam
+              soluta
+              at.
+            </p>
+            <p>
+              <a href="" ng-click="vm.openDialog()" class="probootstrap-custom-link link-sm">بیشتر بخوانید</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 probootstrap-animate">
+        <div class="probootstrap-block-image">
+          <figure>
+            <img src="assets/images/img_square_3.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+          </figure>
+          <div class="text">
+            <span class="date">June 29, 2017</span>
+            <h3>
+              <a href="#">Laboriosam Quod Dignissimos</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam
+              soluta
+              at.
+            </p>
+            <p class="">
+              <a href="#" class="probootstrap-custom-link link-sm">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 probootstrap-animate">
+        <div class="probootstrap-block-image">
+          <figure>
+            <img src="assets/images/img_square_4.jpg" alt="Free Bootstrap Template by ProBootstrap.com">
+          </figure>
+          <div class="text">
+            <span class="date">June 29, 2017</span>
+            <h3>
+              <a href="#">Laboriosam Quod Dignissimos</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam
+              soluta
+              at.
+            </p>
+            <p class="">
+              <a href="#" class="probootstrap-custom-link link-sm">Read More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row" ng-show="vm.loaded">
       <div class="col-md-4 col-sm-4 probootstrap-animate" ng-repeat="n in vm.news"
            style="opacity: 1; visibility: visible">
@@ -343,9 +405,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center probootstrap-animate about-us">
-        <!--<p>
+        <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-        </p>-->
+        </p>
         <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون
           بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
@@ -362,7 +424,7 @@
           و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی
           و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
         </p>
-        <div class="row">
+        <!--<div class="row">
           <div class="col-md-3 text-center">
             <a href="assets/certs/1.jpg">
               <img src="assets/certs/1.jpg" alt="HACCP certificate" class="img-responsive img-thumbnail">
@@ -383,7 +445,7 @@
               <img src="assets/certs/4.jpg" alt="HALAL" class="img-responsive img-thumbnail">
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
