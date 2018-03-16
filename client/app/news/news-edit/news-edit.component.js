@@ -32,7 +32,7 @@ export class NewsEditController {
           url  : 'api/news',
           data : this.news,
         })
-        .then(() => this.$state.go('news'))
+        .then(() => this.$state.go('news', {lng: 'fa'}))
         .catch(err => console.log('err> ', err));
     }
   }
